@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
   // Envoyer un message au client
   socket.emit("messageServeur", "Bienvenue cher client");
 
-  socket.on("messageClient", (data) => {
+  socket.on("messageClient", function (data) {
     console.log(`message reçu du client : ${data}`);
   });
 
@@ -29,6 +29,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(8000, () => {
-  console.log("Le serveur a démarré : http://localhost:8000");
+server.listen(8080, () => {
+  console.log("Le serveur a démarré : http://localhost:8080");
 });
